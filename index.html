@@ -1,302 +1,198 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="https://Pditine:1251451456l@github.com/Daemongy/NanoDiaryAndroid.git/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/Daemongy/NanoDiaryAndroid.git/img/favicon.png"><link rel="canonical" href="https://Pditine:1251451456l@github.com/Daemongy/NanoDiaryAndroid.git/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/Daemongy/NanoDiaryAndroid.git/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/Daemongy/NanoDiaryAndroid.git/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-04-02 21:51:53'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
   
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-R语言" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/04/02/R%E8%AF%AD%E8%A8%80/" class="article-date">
-  <time class="dt-published" datetime="2023-04-02T08:45:04.000Z" itemprop="datePublished">2023-04-02</time>
-</a>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/04/02/R%E8%AF%AD%E8%A8%80/">R语言</a>
-    </h1>
-  
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/Daemongy/NanoDiaryAndroid.git/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/Daemongy/NanoDiaryAndroid.git/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/Daemongy/NanoDiaryAndroid.git/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/Daemongy/NanoDiaryAndroid.git/" title="Hexo"><span class="site-name">Hexo</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/Daemongy/NanoDiaryAndroid.git/2023/04/02/R%E8%AF%AD%E8%A8%80/" title="R语言">R语言</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-04-02T08:45:04.000Z" title="Created 2023-04-02 16:45:04">2023-04-02</time></span></div><div class="content">第一课: 数据分析和基础语法
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="第一课-数据分析和基础语法"><a href="#第一课-数据分析和基础语法" class="headerlink" title="第一课: 数据分析和基础语法"></a>第一课: 数据分析和基础语法</h2><hr>
-<ul>
-<li><p>R语言的优势:免费&#x2F;开源&#x2F;适合统计及数据分析&#x2F;语法渐&#x2F;用户广&#x2F;功能全&#x2F;有最好的数据可视化效果</p>
-</li>
-<li><p>R语言的缺点:性能相对较差,多核支持差,难以用对大文本处理</p>
-</li>
-<li><p>学习R的误区</p>
-</li>
-</ul>
-<ol>
-<li>错误的学习路线,对数据类型浅尝辄止</li>
-<li>不重视基础知识,盲目的使用别人提供脚本</li>
-<li>缺乏练习,不愿动手</li>
-</ol>
-<h3 id="一-学习一门变成语言为什么从数据类型开始"><a href="#一-学习一门变成语言为什么从数据类型开始" class="headerlink" title="一.学习一门变成语言为什么从数据类型开始?"></a>一.学习一门变成语言为什么从数据类型开始?</h3><ol>
-<li>难点:数据类型相关的知识点既多又复杂</li>
-<li>重点:数据整理是数据分析的第一步</li>
-<li>易错点: 90%的bug都是因为数据类型误用引起的</li>
-</ol>
-<h4 id="1-1-R语言数据类型-基本类型"><a href="#1-1-R语言数据类型-基本类型" class="headerlink" title="1.1 R语言数据类型_基本类型"></a>1.1 R语言数据类型_基本类型</h4><ul>
-<li>数值型</li>
-<li>字符型</li>
-<li>逻辑型</li>
-</ul>
-<h4 id="1-3-numeric-数字型"><a href="#1-3-numeric-数字型" class="headerlink" title="1.3 numeric(数字型)"></a>1.3 numeric(数字型)</h4><p>&#x2F;&#x2F; 我也不知道1.2去哪了</p>
-<ul>
-<li>类型:integer, double<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a_integer <span class="operator">&lt;-</span> 1</span><br><span class="line">a_double <span class="operator">&lt;-</span> 0.1</span><br><span class="line"></span><br><span class="line"><span class="built_in">is.integer</span><span class="punctuation">(</span>a_integer<span class="punctuation">)</span></span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>false</span><br><span class="line"><span class="built_in">is.double</span><span class="punctuation">(</span>a_double<span class="punctuation">)</span></span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>true</span><br><span class="line"></span><br><span class="line">a_integer <span class="operator">&lt;-</span> <span class="built_in">as.integer</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">)</span></span><br><span class="line">isinteger<span class="punctuation">(</span>a<span class="punctuation">)</span>integer<span class="punctuation">)</span></span><br><span class="line"><span class="operator">/</span><span class="operator">/</span>true</span><br></pre></td></tr></table></figure>
-R中的数字默认为double型</li>
-</ul>
-<h4 id="1-4charactr-字符串"><a href="#1-4charactr-字符串" class="headerlink" title="1.4charactr(字符串)"></a>1.4charactr(字符串)</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a_character <span class="operator">&lt;-</span><span class="string">&quot;Hello World&quot;</span></span><br><span class="line">a_num_character<span class="operator">&lt;-</span> <span class="string">&quot;123&quot;</span></span><br><span class="line"><span class="built_in">is.character</span><span class="punctuation">(</span>a_character<span class="punctuation">)</span></span><br><span class="line"><span class="comment">#true</span></span><br><span class="line"><span class="built_in">is.numeric</span><span class="punctuation">(</span>a_num_character<span class="punctuation">)</span></span><br><span class="line"><span class="comment">#false</span></span><br><span class="line">a_num_character <span class="operator">&lt;-</span> <span class="built_in">as.numeric</span><span class="punctuation">(</span>a_num_character<span class="punctuation">)</span></span><br><span class="line"><span class="built_in">is.numeric</span><span class="punctuation">(</span>a_numcharacter<span class="punctuation">)</span></span><br><span class="line"><span class="comment">#true</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">paste<span class="punctuation">(</span><span class="string">&quot;Hello_World&quot;</span><span class="punctuation">,</span><span class="string">&quot;123&quot;</span><span class="punctuation">,</span>sep <span class="operator">=</span> <span class="string">&quot;|&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">#&quot;Hello-World|123&quot;</span></span><br><span class="line"></span><br><span class="line">substr1<span class="operator">&lt;-</span> substr<span class="punctuation">(</span><span class="string">&quot;Hello_World&quot;</span><span class="punctuation">,</span>start<span class="operator">=</span> <span class="number">2</span><span class="punctuation">,</span>stop <span class="operator">=</span> <span class="number">5</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="1-5logical-Boolean-逻辑型"><a href="#1-5logical-Boolean-逻辑型" class="headerlink" title="1.5logical(Boolean,逻辑型)"></a>1.5logical(Boolean,逻辑型)</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a_logical <span class="operator">&lt;-</span>true</span><br><span class="line"><span class="built_in">is.logical</span><span class="punctuation">(</span>a_logical<span class="punctuation">)</span></span><br><span class="line"><span class="comment">#true</span></span><br><span class="line">a_numeric<span class="operator">&lt;-</span> <span class="number">1</span></span><br><span class="line"><span class="built_in">is.logical</span><span class="punctuation">(</span>a_numeric<span class="punctuation">)</span></span><br><span class="line"><span class="comment">#false</span></span><br><span class="line">a_numeric <span class="operator">&lt;-</span> <span class="built_in">as.logical</span><span class="punctuation">(</span>a_numeric<span class="punctuation">)</span></span><br><span class="line"><span class="built_in">is.logical</span><span class="punctuation">(</span>a_numeric<span class="punctuation">)</span></span><br><span class="line"><span class="comment">#true</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-R语言数据类型-多维数据类型"><a href="#2-R语言数据类型-多维数据类型" class="headerlink" title="2.R语言数据类型_多维数据类型"></a>2.R语言数据类型_多维数据类型</h3><ul>
-<li>vertor(向量)</li>
-<li>Matrix(矩阵)</li>
-<li>Array</li>
-<li>Data Frame(Table)</li>
-<li>Lists</li>
-</ul>
-<h4 id="2-1vector-向量"><a href="#2-1vector-向量" class="headerlink" title="2.1vector(向量)"></a>2.1vector(向量)</h4><ul>
-<li>类型:三种,numeric,character,logical<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">b_numeric_vector_1 <span class="operator">&lt;-</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">,</span><span class="number">3</span><span class="punctuation">)</span></span><br><span class="line">b_numeric_vector_2 <span class="operator">&lt;-</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">3</span><span class="punctuation">)</span></span><br><span class="line">b_numeric_vector_3 <span class="operator">&lt;-</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="number">2</span><span class="operator">:</span><span class="number">3</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">b_logical_vector_2 <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span>true<span class="punctuation">,</span>false<span class="punctuation">,</span>true<span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">b_character_vertor <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;a&quot;</span><span class="punctuation">,</span><span class="string">&quot;b&quot;</span><span class="punctuation">,</span><span class="string">&quot;c&quot;</span><span class="punctuation">)</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="2-2matrix"><a href="#2-2matrix" class="headerlink" title="2.2matrix"></a>2.2matrix</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">matrix1 <span class="operator">&lt;-</span> matrix<span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">50</span><span class="punctuation">)</span><span class="punctuation">,</span>nrow <span class="operator">=</span> <span class="number">5</span> <span class="punctuation">)</span></span><br><span class="line"><span class="comment">#5行10列</span></span><br><span class="line">matrix2 <span class="operator">&lt;-</span> matrix<span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">50</span><span class="punctuation">)</span><span class="punctuation">,</span>nrow <span class="operator">=</span> <span class="number">5</span> <span class="punctuation">,</span> byrow <span class="operator">=</span> true<span class="punctuation">)</span></span><br><span class="line"><span class="comment">#5行10列,按行排列</span></span><br><span class="line"></span><br><span class="line">a100 <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">100</span><span class="punctuation">)</span> </span><br><span class="line">matrix3 <span class="operator">&lt;-</span> matrix<span class="punctuation">(</span>a100<span class="punctuation">,</span>nrow <span class="operator">=</span> <span class="number">10</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">#10行10列</span></span><br><span class="line">matrix3<span class="punctuation">[</span><span class="number">10</span><span class="punctuation">,</span><span class="number">5</span><span class="operator">:</span><span class="number">7</span><span class="punctuation">]</span> <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">,</span><span class="number">3</span><span class="punctuation">)</span>;</span><br><span class="line"><span class="comment">#取10行5到7列</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#martrix 运算</span></span><br><span class="line">matrix3<span class="operator">*</span>matrix3</span><br><span class="line"><span class="comment">#相应位置相乘</span></span><br><span class="line">matrix3<span class="operator">+</span>matrix3</span><br><span class="line"><span class="comment">#同理</span></span><br><span class="line">matrix3<span class="operator">*</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">10</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">#第一行*1,第二行*2,.....</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="2-5DataFrame-数据框"><a href="#2-5DataFrame-数据框" class="headerlink" title="2.5DataFrame(数据框)"></a>2.5DataFrame(数据框)</h4><ul>
-<li>构建函数:data.frame</li>
-<li>接受的参数:多个等长的向量,参数的名字将转换为列名</li>
-</ul>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">name <span class="operator">&lt;-</span><span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;Bob&quot;</span><span class="punctuation">,</span><span class="string">&quot;Jak&quot;</span><span class="punctuation">,</span><span class="string">&quot;Li&quot;</span><span class="punctuation">,</span><span class="string">&quot;Wang&quot;</span><span class="punctuation">,</span><span class="string">&quot;Zhang&quot;</span><span class="punctuation">)</span></span><br><span class="line">score <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">80</span><span class="punctuation">,</span><span class="number">70</span><span class="punctuation">,</span><span class="number">60</span><span class="punctuation">,</span><span class="number">90</span><span class="punctuation">,</span><span class="number">45</span><span class="punctuation">)</span></span><br><span class="line"><span class="built_in">class</span> <span class="operator">&lt;-</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">,</span><span class="number">1</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">)</span></span><br><span class="line">student_score <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span>name <span class="operator">=</span> name<span class="punctuation">,</span> score <span class="operator">=</span> score<span class="punctuation">,</span> <span class="built_in">class</span> <span class="operator">=</span> <span class="built_in">class</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#数据框有许多去取值方法,详见Google</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="2-6List-特殊的向量"><a href="#2-6List-特殊的向量" class="headerlink" title="2.6List(特殊的向量)"></a>2.6List(特殊的向量)</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">list1 <span class="operator">&lt;-</span> <span class="built_in">list</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">,</span><span class="number">3</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">,</span><span class="number">6</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">list1<span class="punctuation">[</span>C<span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">3</span><span class="punctuation">)</span><span class="punctuation">]</span></span><br><span class="line"></span><br><span class="line">list2 <span class="operator">&lt;-</span> <span class="built_in">list</span><span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">3</span><span class="punctuation">)</span><span class="punctuation">,</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">2</span><span class="punctuation">)</span><span class="punctuation">,</span><span class="string">&quot;hellp&quot;</span><span class="punctuation">,</span>matrix<span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">100</span><span class="punctuation">)</span><span class="punctuation">,</span>nrow <span class="operator">=</span><span class="number">10</span><span class="punctuation">)</span><span class="punctuation">,</span><span class="built_in">list</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span><span class="number">2</span><span class="punctuation">,</span><span class="number">3</span><span class="punctuation">,</span><span class="number">4</span><span class="punctuation">,</span><span class="number">5</span><span class="punctuation">,</span><span class="number">6</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#用[]取出来的还是一个子list,用[[]]取出来的才是list里的值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### 二.基本语法</span></span><br><span class="line"><span class="comment">#### 2.1for</span></span><br><span class="line">````r</span><br><span class="line"><span class="keyword">for</span><span class="punctuation">(</span>i <span class="keyword">in</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">100</span><span class="punctuation">)</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">    k <span class="operator">&lt;-</span> K<span class="operator">+</span><span class="number">1</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line">print<span class="punctuation">(</span>k<span class="punctuation">)</span></span><br><span class="line"><span class="comment">#5050</span></span><br><span class="line"><span class="keyword">for</span> <span class="punctuation">(</span>name <span class="keyword">in</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;a&quot;</span><span class="punctuation">,</span><span class="string">&quot;b&quot;</span><span class="punctuation">,</span> <span class="string">&quot;c&quot;</span> <span class="punctuation">)</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">    print <span class="punctuation">(</span>name<span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h4 id="2-2-while"><a href="#2-2-while" class="headerlink" title="2.2 while"></a>2.2 while</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">i<span class="operator">&lt;-</span> <span class="number">10</span> </span><br><span class="line"><span class="keyword">while</span> <span class="punctuation">(</span>i<span class="operator">&gt;</span><span class="number">0</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">i<span class="operator">&lt;-</span> i<span class="operator">-</span><span class="number">1</span></span><br><span class="line">print<span class="punctuation">(</span>i<span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#死循环</span></span><br><span class="line"><span class="keyword">while</span><span class="punctuation">(</span>true<span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">print <span class="punctuation">(</span><span class="string">&quot;true&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-3if-x2F-else"><a href="#2-3if-x2F-else" class="headerlink" title="2.3if&#x2F;else"></a>2.3if&#x2F;else</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">socre <span class="operator">=</span> <span class="number">60</span></span><br><span class="line"><span class="keyword">if</span><span class="punctuation">(</span>score<span class="operator">&gt;</span> <span class="operator">=</span> <span class="number">90</span><span class="punctuation">)</span><span class="punctuation">&#123;</span></span><br><span class="line">print <span class="punctuation">(</span><span class="string">&quot;excellent&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span><span class="punctuation">(</span>score <span class="operator">&gt;=</span> <span class="number">60</span> <span class="operator">&amp;</span>score<span class="operator">&lt;</span><span class="number">90</span><span class="punctuation">)</span><span class="punctuation">&#123;</span></span><br><span class="line">print <span class="punctuation">(</span><span class="string">&quot;good&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"><span class="keyword">else</span> <span class="punctuation">&#123;</span></span><br><span class="line">print <span class="punctuation">(</span><span class="string">&quot;bad&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-4-switch"><a href="#2-4-switch" class="headerlink" title="2.4 switch"></a>2.4 switch</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x<span class="operator">&lt;-</span> <span class="number">3</span></span><br><span class="line"><span class="built_in">switch</span> <span class="punctuation">(</span>x<span class="punctuation">,</span><span class="string">&quot;first&quot;</span><span class="punctuation">,</span><span class="string">&quot;scond&quot;</span><span class="punctuation">,</span> <span class="string">&quot;third&quot;</span><span class="punctuation">,</span><span class="string">&quot;fourth&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># &quot;third&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="三-函数"><a href="#三-函数" class="headerlink" title="三.函数"></a>三.函数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">strsplit(&quot;abcde&quot;,split = &quot; &quot;)</span><br><span class="line">#&quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot;</span><br><span class="line"></span><br><span class="line">grep (&quot;ab&quot;,c(&quot;ab&quot;,&quot;bc&quot;,&quot;ab&quot;, &quot;abc&quot;)</span><br><span class="line"># 1 3 4</span><br><span class="line"></span><br><span class="line">length(c(1:100))</span><br><span class="line">#100</span><br><span class="line"></span><br><span class="line">#还原内置函数length</span><br><span class="line"></span><br><span class="line">length_out &lt;- function(x)&#123;</span><br><span class="line">    l &lt;- 0;</span><br><span class="line">    for(i in x)</span><br><span class="line">    &#123;</span><br><span class="line">    l&lt;- 1+1</span><br><span class="line">    &#125;</span><br><span class="line">    return(l)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+R语言的优势:免费&#x2F;开源&#x2F;适合统计及数据分析&#x2F;语法渐&#x2F;用户广&#x2F;功能全&#x2F;有最好的数据可视化效果
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/04/02/R%E8%AF%AD%E8%A8%80/" data-id="clfz6nvyw0000hcw6hvr61fwl" data-title="R语言" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+R语言的缺点:性能相对较差,多核支持差,难以用对大文本处理
+
+学习R的误区
 
 
 
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/04/02/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-04-02T08:40:53.440Z" itemprop="datePublished">2023-04-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/04/02/hello-world/">Hello World</a>
-    </h1>
-  
+错误的学习路线,对数据类型浅尝辄止
+不重视基础知识,盲目的使用别人提供脚本
+缺乏练习,不愿动手
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+一.学习一门变成语言为什么从数据类型开始?
+难点:数据类型相关的知识点既多又复杂
+重点:数据整理是数据分析的第一步
+易错点: 90%的bug都是因为数据类型误用引起的
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+1.1 R语言数据类型_基本类型
+数值型
+字符型
+逻辑型
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+1.3 numeric(数字型)&#x2F;&#x2F; 我也不知道1.2去哪了
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+类型:integer, double1234567891011a_integer &lt;- 1a_double &lt;- 0.1is.integer(a_integer)//falseis.double(a_double)//truea_integer &lt;- as.integer(1)isinteger(a ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/Daemongy/NanoDiaryAndroid.git/2023/04/02/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-04-02T08:40:53.440Z" title="Created 2023-04-02 16:40:53">2023-04-02</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+More info: Writing
+Run server1$ hexo server
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/04/02/hello-world/" data-id="clfz6nvz40001hcw6e6n57cq3" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+More info: Server
+Generate static files1$ hexo generate
 
+More info: Generating
+Deploy to remote sites1$ hexo deploy
 
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/04/02/R%E8%AF%AD%E8%A8%80/">R语言</a>
-          </li>
-        
-          <li>
-            <a href="/2023/04/02/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+More info: Deployment
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/Daemongy/NanoDiaryAndroid.git/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/Daemongy/NanoDiaryAndroid.git/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/Daemongy/NanoDiaryAndroid.git/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/Daemongy/NanoDiaryAndroid.git/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/Daemongy/NanoDiaryAndroid.git/2023/04/02/R%E8%AF%AD%E8%A8%80/" title="R语言">R语言</a><time datetime="2023-04-02T08:45:04.000Z" title="Created 2023-04-02 16:45:04">2023-04-02</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/Daemongy/NanoDiaryAndroid.git/2023/04/02/hello-world/" title="Hello World">Hello World</a><time datetime="2023-04-02T08:40:53.440Z" title="Created 2023-04-02 16:40:53">2023-04-02</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/Daemongy/NanoDiaryAndroid.git/archives/2023/04/"><span class="card-archive-list-date">April 2023</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">2</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-04-02T13:51:53.481Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Daemongy/NanoDiaryAndroid.git/js/utils.js"></script><script src="/Daemongy/NanoDiaryAndroid.git/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
