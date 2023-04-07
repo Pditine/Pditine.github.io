@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>GAMES101现代计算机图形学入门 | 紫地丁的个人博客</title><meta name="author" content="紫地丁"><meta name="copyright" content="紫地丁"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Lecture 01 Overview of Computer GraphicsWhat is Computer Graphics?图形学在动画，电影，游戏，设计，可视化，VR，数字插画，模拟，GUI，字体等领域均有应用  最难做的往往是日常生活中最常见的东西  Why Study Cmputer Graphics? Fundamental Intellectual Challenges Tech">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GAMES101现代计算机图形学入门">
+<meta property="og:url" content="https://purpleditine.top/2023/04/06/GAMES101%E7%8E%B0%E4%BB%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="紫地丁的个人博客">
+<meta property="og:description" content="Lecture 01 Overview of Computer GraphicsWhat is Computer Graphics?图形学在动画，电影，游戏，设计，可视化，VR，数字插画，模拟，GUI，字体等领域均有应用  最难做的往往是日常生活中最常见的东西  Why Study Cmputer Graphics? Fundamental Intellectual Challenges Tech">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://purpleditine.top/img/games101.jpg">
+<meta property="article:published_time" content="2023-04-06T08:45:04.000Z">
+<meta property="article:modified_time" content="2023-04-06T13:51:39.480Z">
+<meta property="article:author" content="紫地丁">
+<meta property="article:tag" content="图形学">
+<meta property="article:tag" content="计算机">
+<meta property="article:tag" content="TA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://purpleditine.top/img/games101.jpg"><link rel="shortcut icon" href="/img/head-small.png"><link rel="canonical" href="https://purpleditine.top/2023/04/06/GAMES101%E7%8E%B0%E4%BB%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%85%A5%E9%97%A8/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'GAMES101现代计算机图形学入门',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-06 21:51:39'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/c/font_3995369_tput3vvjpp.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/head.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/games101.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="紫地丁的个人博客"><span class="site-name">紫地丁的个人博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">GAMES101现代计算机图形学入门</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-06T08:45:04.000Z" title="发表于 2023-04-06 16:45:04">2023-04-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-06T13:51:39.480Z" title="更新于 2023-04-06 21:51:39">2023-04-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">531</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="GAMES101现代计算机图形学入门"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Lecture-01-Overview-of-Computer-Graphics"><a href="#Lecture-01-Overview-of-Computer-Graphics" class="headerlink" title="Lecture 01 Overview of Computer Graphics"></a>Lecture 01 Overview of Computer Graphics</h1><h2 id="What-is-Computer-Graphics"><a href="#What-is-Computer-Graphics" class="headerlink" title="What is Computer Graphics?"></a>What is Computer Graphics?</h2><p>图形学在动画，电影，游戏，设计，可视化，VR，数字插画，模拟，GUI，字体等领域均有应用</p>
+<blockquote>
+<p>最难做的往往是日常生活中最常见的东西</p>
+</blockquote>
+<h2 id="Why-Study-Cmputer-Graphics"><a href="#Why-Study-Cmputer-Graphics" class="headerlink" title="Why Study Cmputer Graphics?"></a>Why Study Cmputer Graphics?</h2><ul>
+<li>Fundamental Intellectual Challenges</li>
+<li>Technical Challengs</li>
+<li>Forget about the previous reasons<br>** Computer Graphics is AWESOME! **</li>
+</ul>
+<h2 id="Course-Topics"><a href="#Course-Topics" class="headerlink" title="Course Topics"></a>Course Topics</h2><h3 id="Rasterization-光栅化"><a href="#Rasterization-光栅化" class="headerlink" title="Rasterization(光栅化)"></a>Rasterization(光栅化)</h3><p>光栅化：把三维空间的几何形体显示在屏幕上</p>
+<h3 id="Curves-and-Meshes"><a href="#Curves-and-Meshes" class="headerlink" title="Curves and Meshes"></a>Curves and Meshes</h3><h3 id="Ray-Tracing（光线追踪）"><a href="#Ray-Tracing（光线追踪）" class="headerlink" title="Ray Tracing（光线追踪）"></a>Ray Tracing（光线追踪）</h3><p>慢，但能达到好的效果</p>
+<h3 id="Animation-x2F-Simulation"><a href="#Animation-x2F-Simulation" class="headerlink" title="Animation&#x2F;Simulation"></a>Animation&#x2F;Simulation</h3><h2 id="games101-is-NOT-about"><a href="#games101-is-NOT-about" class="headerlink" title="games101 is NOT about"></a>games101 is NOT about</h2><ul>
+<li>Using OpenGL&#x2F;DirectX&#x2F;Vulkan</li>
+<li>The syntax of Shaders</li>
+<li>We Learn Graphics, not Graphics APIs!</li>
+<li>After this course you’ll be able to learn these by yourself</li>
+<li>3D modeling and GameEngine</li>
+<li>Computer Vision&#x2F;Deep Learning</li>
+</ul>
+<h2 id="Course-Logistics"><a href="#Course-Logistics" class="headerlink" title="Course Logistics"></a>Course Logistics</h2><h3 id="General-Information"><a href="#General-Information" class="headerlink" title="General Information"></a>General Information</h3><p>&#x2F;&#x2F;关于课程网站，教学资料什么的<br>推荐书籍：Fundamentals of Computer Graphics（虎书）</p>
+<h3 id="Use-An-IDE！"><a href="#Use-An-IDE！" class="headerlink" title="Use An IDE！"></a>Use An IDE！</h3><h1 id="Lecture-02-Review-of-Linear-Algebra"><a href="#Lecture-02-Review-of-Linear-Algebra" class="headerlink" title="Lecture 02 Review of Linear Algebra"></a>Lecture 02 Review of Linear Algebra</h1><h2 id="Graphics’-Dependencies"><a href="#Graphics’-Dependencies" class="headerlink" title="Graphics’ Dependencies"></a>Graphics’ Dependencies</h2><ul>
+<li>Basic mathematics</li>
+<li>Basic physics</li>
+<li>Misc:Signal processing&#x2F;Numerical analysis</li>
+<li>A bit of Aesthetics</li>
+</ul>
+<p>&#x2F;&#x2F;讲了一些简单的线性代数，我酌情跳过了一些</p>
+<p>点乘可以计算两个向量的夹角，接近程度<br>如果有a·b，则b-bcos（a，b）与bcos（a，b）垂直</p>
+<p>本课的叉乘用的是右手系</p>
+<p>叉乘可以判定左右，内外</p>
+<h1 id="Lecture-03-Transformation"><a href="#Lecture-03-Transformation" class="headerlink" title="Lecture 03 Transformation"></a>Lecture 03 Transformation</h1><h2 id="2D-transformations"><a href="#2D-transformations" class="headerlink" title="2D transformations"></a>2D transformations</h2><h3 id="Sclale"><a href="#Sclale" class="headerlink" title="Sclale"></a>Sclale</h3><p>对角阵可以作为缩放变换矩阵</p>
+<h3 id="reflection-matrix"><a href="#reflection-matrix" class="headerlink" title="reflection matrix"></a>reflection matrix</h3><p>eg.<br>horizontal reflection: x‘ &#x3D; -x，y’ &#x3D; y</p>
+<h3 id="Shear-matrix"><a href="#Shear-matrix" class="headerlink" title="Shear matrix"></a>Shear matrix</h3><p>运用特定种类的矩阵发生的变换</p>
+<p><img src="https://tuchuange.oss-cn-beijing.aliyuncs.com/img/04BD1869807CA9F444AF462AFE52666C.png" alt="04BD1869807CA9F444AF462AFE52666C"></p>
+<h3 id="Rotate"><a href="#Rotate" class="headerlink" title="Rotate"></a>Rotate</h3><p><img src="https://tuchuange.oss-cn-beijing.aliyuncs.com/img/A4107D0F86D9E2895F4D04CEDFDBE16C.png" alt="A4107D0F86D9E2895F4D04CEDFDBE16C"></p>
+<h3 id="Homogeneous-coorinates"><a href="#Homogeneous-coorinates" class="headerlink" title="Homogeneous coorinates"></a>Homogeneous coorinates</h3><p>关于平移变换：<br>当我们想到平移变换的表示，直观的想法是（x，y）+（a，b），但这种表示法不能用矩阵乘向量的形式表示,所以我们要引入齐次坐标</p>
+<p><img src="https://tuchuange.oss-cn-beijing.aliyuncs.com/img/1BA1C5FFEEE394B85E1B04D0977F2289.png" alt="1BA1C5FFEEE394B85E1B04D0977F2289"></p>
+<h3 id="Affine-Transformations"><a href="#Affine-Transformations" class="headerlink" title="Affine Transformations"></a>Affine Transformations</h3><ul>
+<li>仿射变换:线性变换和平移变换的叠加</li>
+</ul>
+<p><img src="https://tuchuange.oss-cn-beijing.aliyuncs.com/img/8CD980E9146458046BB19ACAE8695723.png" alt="8CD980E9146458046BB19ACAE8695723"></p>
+<p>顺序:先线性变换再平移</p>
+<h3 id="Inverse-Transform"><a href="#Inverse-Transform" class="headerlink" title="Inverse Transform"></a>Inverse Transform</h3><h3 id="Composite-Transform"><a href="#Composite-Transform" class="headerlink" title="Composite Transform"></a>Composite Transform</h3><p>变换的顺序非常重要,矩阵乘法没有交换律</p>
+<p>变换应用的顺序是从右到左</p>
+<h3 id="Decomposing-Complex-Transforms"><a href="#Decomposing-Complex-Transforms" class="headerlink" title="Decomposing Complex Transforms"></a>Decomposing Complex Transforms</h3><p>如果有一个正方形,取其一点a(x,y),绕其旋转,我们可以现将正方形移动-a,也就是将a点移动到原点,进行旋转,然后再移动a,就得到了结果</p>
+<p><img src="https://tuchuange.oss-cn-beijing.aliyuncs.com/img/B49D8D2A4C6683BB4FB9203833E6F22F.png" alt="B49D8D2A4C6683BB4FB9203833E6F22F"></p>
+<h2 id="3D-Transformatios"><a href="#3D-Transformatios" class="headerlink" title="3D Transformatios"></a>3D Transformatios</h2><p>&#x2F;&#x2F;大概意思是和2D类似</p>
+<h1 id="Lecture-04-Transformation-Cont"><a href="#Lecture-04-Transformation-Cont" class="headerlink" title="Lecture 04 Transformation Cont"></a>Lecture 04 Transformation Cont</h1></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://purpleditine.top">紫地丁</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://purpleditine.top/2023/04/06/GAMES101%E7%8E%B0%E4%BB%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%85%A5%E9%97%A8/">https://purpleditine.top/2023/04/06/GAMES101%E7%8E%B0%E4%BB%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%85%A5%E9%97%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://purpleditine.top" target="_blank">紫地丁的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/">图形学</a><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><a class="post-meta__tags" href="/tags/TA/">TA</a></div><div class="post_share"><div class="social-share" data-image="/img/games101.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/04/06/%E9%9A%8F%E7%AC%94-2023%E4%B8%8A%E5%8D%8A%E5%B9%B4/" title="随笔-2023上半年"><img class="cover" src="/img/note.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">随笔-2023上半年</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/04/03/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8/" title="线性代数的本质"><img class="cover" src="/img/R-C.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-03</div><div class="title">线性代数的本质</div></div></a></div><div><a href="/2023/04/02/R%E8%AF%AD%E8%A8%80/" title="R语言"><img class="cover" src="/img/OIP-C.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-02</div><div class="title">R语言</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/head.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">紫地丁</div><div class="author-info__description">李健豪 中国传媒大学本科在读 QQ:1146556075 微信:philipica       请注明来历</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/89364405?spm_id_from=333.1007.0.0"><i class="iconfont icon-bilibili"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://space.bilibili.com/89364405?spm_id_from=333.999.0.0" target="_blank" title=""><i class="iconfont icon-bilibili"></i></a><a class="social-icon" href="https://github.com/pditine" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:hanfe666@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这里是紫地丁的个人博客，我会不定时的更新许多奇奇怪怪的作品、博文和碎碎念。总之，才疏学浅、漏洞百出、请多指教！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Lecture-01-Overview-of-Computer-Graphics"><span class="toc-number">1.</span> <span class="toc-text">Lecture 01 Overview of Computer Graphics</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-Computer-Graphics"><span class="toc-number">1.1.</span> <span class="toc-text">What is Computer Graphics?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Why-Study-Cmputer-Graphics"><span class="toc-number">1.2.</span> <span class="toc-text">Why Study Cmputer Graphics?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Course-Topics"><span class="toc-number">1.3.</span> <span class="toc-text">Course Topics</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Rasterization-%E5%85%89%E6%A0%85%E5%8C%96"><span class="toc-number">1.3.1.</span> <span class="toc-text">Rasterization(光栅化)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Curves-and-Meshes"><span class="toc-number">1.3.2.</span> <span class="toc-text">Curves and Meshes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ray-Tracing%EF%BC%88%E5%85%89%E7%BA%BF%E8%BF%BD%E8%B8%AA%EF%BC%89"><span class="toc-number">1.3.3.</span> <span class="toc-text">Ray Tracing（光线追踪）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Animation-x2F-Simulation"><span class="toc-number">1.3.4.</span> <span class="toc-text">Animation&#x2F;Simulation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#games101-is-NOT-about"><span class="toc-number">1.4.</span> <span class="toc-text">games101 is NOT about</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Course-Logistics"><span class="toc-number">1.5.</span> <span class="toc-text">Course Logistics</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#General-Information"><span class="toc-number">1.5.1.</span> <span class="toc-text">General Information</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Use-An-IDE%EF%BC%81"><span class="toc-number">1.5.2.</span> <span class="toc-text">Use An IDE！</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lecture-02-Review-of-Linear-Algebra"><span class="toc-number">2.</span> <span class="toc-text">Lecture 02 Review of Linear Algebra</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Graphics%E2%80%99-Dependencies"><span class="toc-number">2.1.</span> <span class="toc-text">Graphics’ Dependencies</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lecture-03-Transformation"><span class="toc-number">3.</span> <span class="toc-text">Lecture 03 Transformation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2D-transformations"><span class="toc-number">3.1.</span> <span class="toc-text">2D transformations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Sclale"><span class="toc-number">3.1.1.</span> <span class="toc-text">Sclale</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reflection-matrix"><span class="toc-number">3.1.2.</span> <span class="toc-text">reflection matrix</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Shear-matrix"><span class="toc-number">3.1.3.</span> <span class="toc-text">Shear matrix</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Rotate"><span class="toc-number">3.1.4.</span> <span class="toc-text">Rotate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Homogeneous-coorinates"><span class="toc-number">3.1.5.</span> <span class="toc-text">Homogeneous coorinates</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Affine-Transformations"><span class="toc-number">3.1.6.</span> <span class="toc-text">Affine Transformations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Inverse-Transform"><span class="toc-number">3.1.7.</span> <span class="toc-text">Inverse Transform</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Composite-Transform"><span class="toc-number">3.1.8.</span> <span class="toc-text">Composite Transform</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Decomposing-Complex-Transforms"><span class="toc-number">3.1.9.</span> <span class="toc-text">Decomposing Complex Transforms</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3D-Transformatios"><span class="toc-number">3.2.</span> <span class="toc-text">3D Transformatios</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lecture-04-Transformation-Cont"><span class="toc-number">4.</span> <span class="toc-text">Lecture 04 Transformation Cont</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/04/03/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8/" title="线性代数的本质"><img src="/img/R-C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线性代数的本质"/></a><div class="content"><a class="title" href="/2023/04/03/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9A%84%E6%9C%AC%E8%B4%A8/" title="线性代数的本质">线性代数的本质</a><time datetime="2023-04-07T15:10:07.000Z" title="更新于 2023-04-07 23:10:07">2023-04-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/04/Cyberpsychosis%E6%B8%B8%E6%88%8F%E4%BB%8B%E7%BB%8D/" title="Cyberpsychosis游戏介绍"><img src="/img/cyberpsychosis/202303261558559.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cyberpsychosis游戏介绍"/></a><div class="content"><a class="title" href="/2023/04/04/Cyberpsychosis%E6%B8%B8%E6%88%8F%E4%BB%8B%E7%BB%8D/" title="Cyberpsychosis游戏介绍">Cyberpsychosis游戏介绍</a><time datetime="2023-04-07T14:07:18.951Z" title="更新于 2023-04-07 22:07:18">2023-04-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/06/GAMES101%E7%8E%B0%E4%BB%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%85%A5%E9%97%A8/" title="GAMES101现代计算机图形学入门"><img src="/img/games101.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GAMES101现代计算机图形学入门"/></a><div class="content"><a class="title" href="/2023/04/06/GAMES101%E7%8E%B0%E4%BB%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%85%A5%E9%97%A8/" title="GAMES101现代计算机图形学入门">GAMES101现代计算机图形学入门</a><time datetime="2023-04-06T13:51:39.480Z" title="更新于 2023-04-06 21:51:39">2023-04-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/06/%E9%9A%8F%E7%AC%94-2023%E4%B8%8A%E5%8D%8A%E5%B9%B4/" title="随笔-2023上半年"><img src="/img/note.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="随笔-2023上半年"/></a><div class="content"><a class="title" href="/2023/04/06/%E9%9A%8F%E7%AC%94-2023%E4%B8%8A%E5%8D%8A%E5%B9%B4/" title="随笔-2023上半年">随笔-2023上半年</a><time datetime="2023-04-06T13:02:18.191Z" title="更新于 2023-04-06 21:02:18">2023-04-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/05/%E6%9C%80%E5%90%8E%E7%9A%84%E6%A0%91%E8%8B%97TheFinalSapling%E6%B8%B8%E6%88%8F%E4%BB%8B%E7%BB%8D/" title="最后的树苗TheFinalSapling游戏介绍"><img src="/img/gj.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="最后的树苗TheFinalSapling游戏介绍"/></a><div class="content"><a class="title" href="/2023/04/05/%E6%9C%80%E5%90%8E%E7%9A%84%E6%A0%91%E8%8B%97TheFinalSapling%E6%B8%B8%E6%88%8F%E4%BB%8B%E7%BB%8D/" title="最后的树苗TheFinalSapling游戏介绍">最后的树苗TheFinalSapling游戏介绍</a><time datetime="2023-04-06T12:26:13.172Z" title="更新于 2023-04-06 20:26:13">2023-04-06</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/games101.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2023 By 紫地丁</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,255,127" opacity="1" zIndex="-1" count="130" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
