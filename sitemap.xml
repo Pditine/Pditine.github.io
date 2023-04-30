@@ -13,7 +13,7 @@
   <url>
     <loc>https://purpleditine.top/2023/04/28/Astar%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     
-    <lastmod>2023-04-28</lastmod>
+    <lastmod>2023-04-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -223,6 +223,13 @@
   </url>
   
   <url>
+    <loc>https://purpleditine.top/tags/%E7%83%AD%E6%9B%B4%E6%96%B0/</loc>
+    <lastmod>2023-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://purpleditine.top/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2023-04-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -244,7 +251,14 @@
   </url>
   
   <url>
-    <loc>https://purpleditine.top/tags/%E7%83%AD%E6%9B%B4%E6%96%B0/</loc>
+    <loc>https://purpleditine.top/tags/%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2023-04-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://purpleditine.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
     <lastmod>2023-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -265,21 +279,7 @@
   </url>
   
   <url>
-    <loc>https://purpleditine.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
-    <lastmod>2023-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://purpleditine.top/tags/TA/</loc>
-    <lastmod>2023-04-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://purpleditine.top/tags/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2023-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -337,7 +337,7 @@
   </url>
   
   <url>
-    <loc>https://purpleditine.top/categories/%E4%BD%9C%E5%93%81/</loc>
+    <loc>https://purpleditine.top/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/</loc>
     <lastmod>2023-04-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
