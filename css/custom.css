@@ -11,20 +11,17 @@
   font-display: swap;
   font-weight: lighter;
 }
-
 div#menus {
   font-family: "ZhuZiAYuanJWD";
 }
-/* h1#site-title {
-  font-family: ZhuZiAYuanJWD;
-  font-size: 3em !important;
-} */
-a.article-title,
+
 a.blog-slider__title,
+h1.post-title ,
 a.categoryBar-list-link,
-h1.post-title {
+a.article-title {
   font-family: ZhuZiAYuanJWD;
 }
+
 
 .iconfont {
   font-family: "iconfont" !important;

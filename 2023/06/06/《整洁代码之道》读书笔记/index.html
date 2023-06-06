@@ -1,0 +1,371 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>《代码整洁之道》读书笔记 | 紫地丁的个人博客</title><meta name="author" content="紫地丁"><meta name="copyright" content="紫地丁"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="“我们就是一群代码猴子”">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《代码整洁之道》读书笔记">
+<meta property="og:url" content="https://purpleditine.top/2023/06/06/%E3%80%8A%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81%E4%B9%8B%E9%81%93%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="紫地丁的个人博客">
+<meta property="og:description" content="“我们就是一群代码猴子”">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://purpleditine.top/img/%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81%E4%B9%8B%E9%81%93.jpeg">
+<meta property="article:published_time" content="2023-06-06T03:36:07.000Z">
+<meta property="article:modified_time" content="2023-06-06T07:09:38.094Z">
+<meta property="article:author" content="紫地丁">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="计算机">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://purpleditine.top/img/%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81%E4%B9%8B%E9%81%93.jpeg"><link rel="shortcut icon" href="/img/head-small.png"><link rel="canonical" href="https://purpleditine.top/2023/06/06/%E3%80%8A%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81%E4%B9%8B%E9%81%93%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '《代码整洁之道》读书笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-06 15:09:38'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/head.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81%E4%B9%8B%E9%81%93.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="紫地丁的个人博客"><span class="site-name">紫地丁的个人博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">《代码整洁之道》读书笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-06T03:36:07.000Z" title="发表于 2023-06-06 11:36:07">2023-06-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-06T07:09:38.094Z" title="更新于 2023-06-06 15:09:38">2023-06-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="《代码整洁之道》读书笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><img src="https://tuchuange.oss-cn-beijing.aliyuncs.com/img/%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81%E4%B9%8B%E9%81%93.jpeg" alt="整洁代码之道"></p>
+<h1 id="整洁代码"><a href="#整洁代码" class="headerlink" title="整洁代码"></a>整洁代码</h1><h2 id="要有代码"><a href="#要有代码" class="headerlink" title="要有代码"></a>要有代码</h2><p>我们永远也抛不掉代码,因为代码呈现了需求的细节</p>
+<h2 id="糟糕的代码"><a href="#糟糕的代码" class="headerlink" title="糟糕的代码"></a>糟糕的代码</h2><blockquote>
+<p>我们都曾经瞟一眼自己亲手造成的混乱,界定弃之而不顾,走向新一天.我们都曾经看到自己的烂程序居然能运行,然后断言能运行的烂程序总比什么都没有强.我们都曾经说过有朝一日再回头清理.当然,在那些日子里,我们都没听说过勒布朗法则:稍后等于永不</p>
+</blockquote>
+<h3 id="混乱的代价"><a href="#混乱的代价" class="headerlink" title="混乱的代价"></a>混乱的代价</h3><p>代码逻辑应当直截了当,叫缺陷难以隐藏;尽量减少依赖关系,是指便于维护;依据某种分层战略完善错误处理代码;性能调至最优,省得引诱别人做没规矩的优化,搞出一堆混乱来.整洁代码整洁代码只做好一件事</p>
+<h3 id="童子军军规"><a href="#童子军军规" class="headerlink" title="童子军军规"></a>童子军军规</h3><p>让营地比你来时更干净</p>
+<h1 id="有意义的命名"><a href="#有意义的命名" class="headerlink" title="有意义的命名"></a>有意义的命名</h1><ul>
+<li>名副其实</li>
+<li>避免误导</li>
+<li>做有意义的区分</li>
+</ul>
+<p>​	比如用数字区区分比如item1,item2在某些场景下很没意义</p>
+<ul>
+<li>使用读得出来的名称</li>
+<li>使用可搜索的名称</li>
+</ul>
+<p>​	长名称胜于短名称,搜得到的名称胜于用自造编码代写就的名称</p>
+<ul>
+<li>避免使用编码</li>
+</ul>
+<p>​	把类型或作用域编进名称里,徒然增加了解码的负担</p>
+<ul>
+<li><p>避免映射思维</p>
+<p>不应当让读者在脑中把你的名称翻译为他们熟知的名称,这种问题经常出现在选择使用问题领域术语还是解决方案领域术语时</p>
+</li>
+<li><p>类名</p>
+</li>
+</ul>
+<p>​	类名和对象名应该是名词或名词短语</p>
+<ul>
+<li>方法名</li>
+</ul>
+<p>​	方法名应当是动词或动词短语</p>
+<ul>
+<li>别扮可爱</li>
+</ul>
+<p>​	把函数HolyHandGrenade改名成DeleteItems比较好</p>
+<ul>
+<li>每个概念对应一个词</li>
+</ul>
+<p>​	比如,在同一个程序集中,既有controller,又有Manager,driver之类的类名,就会让人困惑</p>
+<ul>
+<li><p>别用双关语</p>
+</li>
+<li><p>使用解决方案领域名称</p>
+</li>
+</ul>
+<p>​	只有程序员才会读你的代码,所以尽管用CS术语,算法名,模式名,数学术语吧</p>
+<ul>
+<li>使用源自所涉问题领域的名称</li>
+</ul>
+<p>​	如果不能用程序员熟悉的术语来给手头的工作命名,就采用所涉问题领域而来的名称吧</p>
+<ul>
+<li>添加有意义的语境</li>
+</ul>
+<p>​	比如添加前缀,让读者明白这些是某个更大结构的一部分</p>
+<ul>
+<li>不用添加没用的语境</li>
+</ul>
+<p>​	主要短名称足够清楚,就要比长名称要好</p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="短小"><a href="#短小" class="headerlink" title="短小"></a>短小</h2><p>函数的第一规则是要短小,第二条规则是还要更短小</p>
+<p>函数的缩进层级不该多于两层</p>
+<p>否则,你需要拆分更多更小缩进层级的函数</p>
+<h2 id="只做一件事"><a href="#只做一件事" class="headerlink" title="只做一件事"></a>只做一件事</h2><p>如果一个函数做的许多事</p>
+<p>比如 1.判断是否为测试页面;2.如果是,则容纳近设置和分拆步骤;3.渲染成HTML</p>
+<p>你需要拆分更多更小抽象层级的函数</p>
+<h2 id="每一个函数一个抽象层级"><a href="#每一个函数一个抽象层级" class="headerlink" title="每一个函数一个抽象层级"></a>每一个函数一个抽象层级</h2><ul>
+<li>向下规则:自顶向下读代码</li>
+</ul>
+<p>我们希望每一个函数后面都跟着位于下一抽象层级的函数</p>
+<h2 id="使用描述性的名称"><a href="#使用描述性的名称" class="headerlink" title="使用描述性的名称"></a>使用描述性的名称</h2><h2 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h2><p>最理想的参数数量是0,其次是1,然后是2</p>
+<p>尽量避免3个或以上参数的函数</p>
+<p>如果你写出了一个3参数的函数,比如这个函数的参数列表是(int x, int y ,int z)</p>
+<p>考虑用结构体或类封装参数,例如更改参数列表为(Point thePoint)</p>
+<h2 id="无副作用"><a href="#无副作用" class="headerlink" title="无副作用"></a>无副作用</h2><p>副作用是一种谎言,函数承诺只做一件事,函数的名称和注释说明了这个函数只做一件事,但还是会做其他被藏起来的副作用</p>
+<h2 id="分隔指令与询问"><a href="#分隔指令与询问" class="headerlink" title="分隔指令与询问"></a>分隔指令与询问</h2><p>函数要么做什么事,要么回答什么事,但二者不可得兼</p>
+<p>函数应该修改某对象的状态,或是返回该对象的状态</p>
+<h2 id="使用异常代替返回错误码"><a href="#使用异常代替返回错误码" class="headerlink" title="使用异常代替返回错误码"></a>使用异常代替返回错误码</h2><p>通过抛出异常来代替debug.log</p>
+<p>错误处理本身就是一件事,所以我们要从函数中抽离Try&#x2F;Catch代码块,另外形成函数</p>
+<h2 id="别重复自己"><a href="#别重复自己" class="headerlink" title="别重复自己"></a>别重复自己</h2><p>不要书写重复的代码</p>
+<p>直接调用更小层级的函数来代替重复</p>
+<h2 id="关于结构化编程"><a href="#关于结构化编程" class="headerlink" title="关于结构化编程"></a>关于结构化编程</h2><p>结构化编程要求每个函数都应该有一个入口,一个出口,这使得每个函数中只应有一个return,循环中不能有break,continue,且永远也不能有goto</p>
+<p>结构化编程的规范和目标只对于大函数有明显的好处</p>
+<p>只要函数保持短小,偶尔出现的return,break,continue没有坏处,甚至比单出单入原则更有表达力</p>
+<p>依然要避免使用goto</p>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><h2 id="注释总是一种失败"><a href="#注释总是一种失败" class="headerlink" title="注释总是一种失败"></a>注释总是一种失败</h2><p>注释总是一种失败,我们总无法找到不用注释就能表达自我的方法,所以总要有注释,这不值得庆贺</p>
+<p>注释存在的时间越久,就离其所描述的代码越远,越来越变得全然错误.原因很简单,程序员不能坚持维护注释</p>
+<p>注释不能美化糟糕的代码</p>
+<p>但总要有注释,面对问题,读者的思考没有我们这么深入,我们也当然需要用某种方法让读者快速理解代码而不费脑力</p>
+<h2 id="好注释"><a href="#好注释" class="headerlink" title="好注释"></a>好注释</h2><ul>
+<li>法律信息</li>
+<li>提供信息的注释</li>
+</ul>
+<p>​	描述参数的作用,描述返回值的意义,描述变量的含义</p>
+<ul>
+<li>对意图的解释</li>
+</ul>
+<p>​	如果你不得不用一种反逻辑的方式写代码,写个注释解释一下</p>
+<ul>
+<li><p>警示</p>
+</li>
+<li><p>TODO注释</p>
+</li>
+</ul>
+<h2 id="坏注释"><a href="#坏注释" class="headerlink" title="坏注释"></a>坏注释</h2><ul>
+<li>多余的注释</li>
+</ul>
+<p>​	名称已经对功能做了很好的解释,不需要注释</p>
+<ul>
+<li>误导性注释</li>
+</ul>
+<p>​	程序员很久没有维护注释了,经过了几次代码修改,注释越来越错误</p>
+<ul>
+<li>循规式注释</li>
+</ul>
+<p>​	不是每个函数,变量或是别的东西都要有注释</p>
+<ul>
+<li>日志式注释</li>
+<li>废话注释</li>
+<li>位置标记</li>
+<li>归属与署名</li>
+<li>注释掉的代码</li>
+<li>HTML注释</li>
+<li>非本地信息</li>
+</ul>
+<p>​	注释应该描述近几行代码的信息</p>
+<ul>
+<li>信息过多</li>
+<li>不明显的联系</li>
+</ul>
+<p>​	注释应该和其描述的代码有明显的联系</p>
+<ul>
+<li>如果注释本身还需要解释,那就太残念了</li>
+</ul>
+<h1 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h1><h2 id="垂直格式"><a href="#垂直格式" class="headerlink" title="垂直格式"></a>垂直格式</h2><p>一个脚本的长度不要太长,段文件通常比长文件易于理解(吐槽萌石科技那个一万五千行的gamemanager)</p>
+<p>垂直方向上的概念间要有区分,每个空白行都是一条线索,标识出新的独立概念.往下读代码时,你的目光总会停留于空白之后的那行</p>
+<p>如果抽掉这些空白行,代码可读性会减弱不少</p>
+<p>同样,如果空白行隔开了概念,靠近的代码行则暗示了它们之间的紧密关系</p>
+<p>除非有很少的理由,否则不要把有密切关系的概念放到不同的文件</p>
+<p>变量声明应该尽可能靠近其使用的位置</p>
+<p>因为函数很短,局部变量应该在函数的顶部出现,</p>
+<p>实体变量应该在类的顶部声明</p>
+<h2 id="横向格式"><a href="#横向格式" class="headerlink" title="横向格式"></a>横向格式</h2><p>应该尽力保持代码行短小,遵循无需拖动滚动条到右边的原则</p>
+<p>在赋值操作符周围加上空格,表示强调</p>
+<p>将参数列表中的参数隔开,表示互相分离</p>
+<p>乘法因子之间没有空格,表示较高优先级,加法因子间没有空格,表示较低优先级</p>
+<h1 id="对象和数据结构"><a href="#对象和数据结构" class="headerlink" title="对象和数据结构"></a>对象和数据结构</h1><p>过程式代码难以添加新数据结构,因为必须修改所有函数.面向对象代码难以添加新函数,因为必须修改所有类</p>
+<ul>
+<li><p>得墨忒耳律:对象隐藏数据,暴露操作</p>
+</li>
+<li><p>数据传送对象(DTO):最为精炼的数据结构,是一个只有公共变量,没有函数的类</p>
+</li>
+</ul>
+<p>仅仅是对DTO添加属性访问器(get-set对),会让oo纯化者感觉舒服些,但通常没有其他好处</p>
+<p>为DTO塞进业务规则方法,把这类数据结构当成对象来用是不明智的行为,它导致了数据结构和对象的混杂体</p>
+<h1 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h1><ul>
+<li><p>使用异常而非返回码</p>
+</li>
+<li><p>先写try-catch</p>
+</li>
+<li><p>使用不可控异常</p>
+</li>
+<li><p>当我们在应用程序中定义异常类时,最重要的考虑应该是它们如何被捕获</p>
+</li>
+<li><p>减少返回null,别传递null</p>
+</li>
+</ul>
+<p>​	本质上是减少判空的次数</p>
+<h1 id="关于使用第三方代码"><a href="#关于使用第三方代码" class="headerlink" title="关于使用第三方代码"></a>关于使用第三方代码</h1><p>通过代码中少数几处引用第三方边界接口的位置来管理第三方边界</p>
+<h1 id="类"><a href="#类" class="headerlink" title="类"></a>类</h1><p>放松封装总是下策</p>
+<h2 id="单一职责原则"><a href="#单一职责原则" class="headerlink" title="单一职责原则"></a>单一职责原则</h2><p>SRP是OO设计中最重要但也最难遵守的概念,如果你可以记住SRP,你就可以把曾经写过的许多臃肿的类切分成只有单一职责的去耦式单元</p>
+<p>大量短小的类不会造成逻辑复杂,如果造成了,那么把它们合成一个庞大的类要更加逻辑复杂</p>
+<h2 id="内聚"><a href="#内聚" class="headerlink" title="内聚"></a>内聚</h2><p>通常而言,方法操作的变量越多,就越黏聚到类上.如果一个类中的每一个变量都被每一个方法所使用,则该类具有最大的内聚性.</p>
+<p>当然,创建这种极大化内聚类是既不可取也不可行的,但我们依然希望内聚性保持在较高位置</p>
+<p>内聚性高,意味着类中的方法和变量相互依赖,互相结合成一个逻辑整体</p>
+<p>保持一个函数和参数列表短小有时会导致为一组方法所用的实体变量数量增加,此时往往意味着至少有一个类要从大类中挣扎出来,你可以将这些方法和变量放到新的类中,使新的类更加内聚</p>
+<h1 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h1><h2 id="将系统的构造与使用分开"><a href="#将系统的构造与使用分开" class="headerlink" title="将系统的构造与使用分开"></a>将系统的构造与使用分开</h2><ul>
+<li><p>工厂</p>
+</li>
+<li><p>依赖注入</p>
+</li>
+</ul>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1><blockquote>
+<p>在写代码时,我用余光瞟见它.它一直提醒我,我做了写出整洁代码的承诺</p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://purpleditine.top">紫地丁</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://purpleditine.top/2023/06/06/%E3%80%8A%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81%E4%B9%8B%E9%81%93%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">https://purpleditine.top/2023/06/06/%E3%80%8A%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81%E4%B9%8B%E9%81%93%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://purpleditine.top" target="_blank">紫地丁的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%BC%96%E7%A8%8B/">编程</a><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a></div><div class="post_share"><div class="social-share" data-image="/img/%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81%E4%B9%8B%E9%81%93.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/05/27/Unity-3D%E6%95%B0%E5%AD%A6/" title="Unity-3D数学基础"><img class="cover" src="/img/unityMath.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Unity-3D数学基础</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/04/13/Csharp%E9%87%8D%E5%AD%A6-%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="C#重学-官方文档学习笔记"><img class="cover" src="/img/CS.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-13</div><div class="title">C#重学-官方文档学习笔记</div></div></a></div><div><a href="/2023/04/25/Lua%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Lua学习笔记"><img class="cover" src="/img/Lua.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-25</div><div class="title">Lua学习笔记</div></div></a></div><div><a href="/2023/05/08/MVC%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="MVC架构学习笔记"><img class="cover" src="/img/mvc.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-08</div><div class="title">MVC架构学习笔记</div></div></a></div><div><a href="/2023/04/02/R%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="R语言学习笔记"><img class="cover" src="/img/OIP-C.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-02</div><div class="title">R语言学习笔记</div></div></a></div><div><a href="/2023/05/27/Unity-3D%E6%95%B0%E5%AD%A6/" title="Unity-3D数学基础"><img class="cover" src="/img/unityMath.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-27</div><div class="title">Unity-3D数学基础</div></div></a></div><div><a href="/2023/04/07/%E3%80%8A%E6%B8%B8%E6%88%8F%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%BC%8F%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="《游戏编程模式》学习笔记"><img class="cover" src="/img/%E6%B8%B8%E6%88%8F%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%BC%8F.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-07</div><div class="title">《游戏编程模式》学习笔记</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/head.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">紫地丁</div><div class="author-info__description">李健豪 中国传媒大学游戏系本科在读 QQ:1146556075 微信:philipica       请注明来历</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">24</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/89364405?spm_id_from=333.1007.0.0"><i class="iconfont icon-bilibili"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://space.bilibili.com/89364405?spm_id_from=333.999.0.0" target="_blank" title=""><i class="iconfont icon-bilibili"></i></a><a class="social-icon" href="https://github.com/pditine" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:hanfe666@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这里是紫地丁的个人博客，我会不定时的更新许多奇奇怪怪的作品、博文和碎碎念。总之，才疏学浅、漏洞百出、请多指教！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81"><span class="toc-number">1.</span> <span class="toc-text">整洁代码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A6%81%E6%9C%89%E4%BB%A3%E7%A0%81"><span class="toc-number">1.1.</span> <span class="toc-text">要有代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%9F%E7%B3%95%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="toc-number">1.2.</span> <span class="toc-text">糟糕的代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B7%E4%B9%B1%E7%9A%84%E4%BB%A3%E4%BB%B7"><span class="toc-number">1.2.1.</span> <span class="toc-text">混乱的代价</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%A5%E5%AD%90%E5%86%9B%E5%86%9B%E8%A7%84"><span class="toc-number">1.2.2.</span> <span class="toc-text">童子军军规</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%89%E6%84%8F%E4%B9%89%E7%9A%84%E5%91%BD%E5%90%8D"><span class="toc-number">2.</span> <span class="toc-text">有意义的命名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">3.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%AD%E5%B0%8F"><span class="toc-number">3.1.</span> <span class="toc-text">短小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AA%E5%81%9A%E4%B8%80%E4%BB%B6%E4%BA%8B"><span class="toc-number">3.2.</span> <span class="toc-text">只做一件事</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%8F%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0%E4%B8%80%E4%B8%AA%E6%8A%BD%E8%B1%A1%E5%B1%82%E7%BA%A7"><span class="toc-number">3.3.</span> <span class="toc-text">每一个函数一个抽象层级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%8F%8F%E8%BF%B0%E6%80%A7%E7%9A%84%E5%90%8D%E7%A7%B0"><span class="toc-number">3.4.</span> <span class="toc-text">使用描述性的名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0"><span class="toc-number">3.5.</span> <span class="toc-text">函数参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E5%89%AF%E4%BD%9C%E7%94%A8"><span class="toc-number">3.6.</span> <span class="toc-text">无副作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E9%9A%94%E6%8C%87%E4%BB%A4%E4%B8%8E%E8%AF%A2%E9%97%AE"><span class="toc-number">3.7.</span> <span class="toc-text">分隔指令与询问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%BC%82%E5%B8%B8%E4%BB%A3%E6%9B%BF%E8%BF%94%E5%9B%9E%E9%94%99%E8%AF%AF%E7%A0%81"><span class="toc-number">3.8.</span> <span class="toc-text">使用异常代替返回错误码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%AB%E9%87%8D%E5%A4%8D%E8%87%AA%E5%B7%B1"><span class="toc-number">3.9.</span> <span class="toc-text">别重复自己</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E7%BB%93%E6%9E%84%E5%8C%96%E7%BC%96%E7%A8%8B"><span class="toc-number">3.10.</span> <span class="toc-text">关于结构化编程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">4.</span> <span class="toc-text">注释</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A%E6%80%BB%E6%98%AF%E4%B8%80%E7%A7%8D%E5%A4%B1%E8%B4%A5"><span class="toc-number">4.1.</span> <span class="toc-text">注释总是一种失败</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%BD%E6%B3%A8%E9%87%8A"><span class="toc-number">4.2.</span> <span class="toc-text">好注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9D%8F%E6%B3%A8%E9%87%8A"><span class="toc-number">4.3.</span> <span class="toc-text">坏注释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text">格式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9E%82%E7%9B%B4%E6%A0%BC%E5%BC%8F"><span class="toc-number">5.1.</span> <span class="toc-text">垂直格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%AA%E5%90%91%E6%A0%BC%E5%BC%8F"><span class="toc-number">5.2.</span> <span class="toc-text">横向格式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%92%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">6.</span> <span class="toc-text">对象和数据结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-number">7.</span> <span class="toc-text">错误处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9%E4%BB%A3%E7%A0%81"><span class="toc-number">8.</span> <span class="toc-text">关于使用第三方代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B1%BB"><span class="toc-number">9.</span> <span class="toc-text">类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99"><span class="toc-number">9.1.</span> <span class="toc-text">单一职责原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E8%81%9A"><span class="toc-number">9.2.</span> <span class="toc-text">内聚</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F"><span class="toc-number">10.</span> <span class="toc-text">系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9E%84%E9%80%A0%E4%B8%8E%E4%BD%BF%E7%94%A8%E5%88%86%E5%BC%80"><span class="toc-number">10.1.</span> <span class="toc-text">将系统的构造与使用分开</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#END"><span class="toc-number">11.</span> <span class="toc-text">END</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/06/06/%E3%80%8A%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81%E4%B9%8B%E9%81%93%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="《代码整洁之道》读书笔记"><img src="/img/%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81%E4%B9%8B%E9%81%93.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《代码整洁之道》读书笔记"/></a><div class="content"><a class="title" href="/2023/06/06/%E3%80%8A%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81%E4%B9%8B%E9%81%93%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="《代码整洁之道》读书笔记">《代码整洁之道》读书笔记</a><time datetime="2023-06-06T07:09:38.094Z" title="更新于 2023-06-06 15:09:38">2023-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/27/Unity-3D%E6%95%B0%E5%AD%A6/" title="Unity-3D数学基础"><img src="/img/unityMath.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity-3D数学基础"/></a><div class="content"><a class="title" href="/2023/05/27/Unity-3D%E6%95%B0%E5%AD%A6/" title="Unity-3D数学基础">Unity-3D数学基础</a><time datetime="2023-05-31T13:46:05.580Z" title="更新于 2023-05-31 21:46:05">2023-05-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/06/%E9%9A%8F%E7%AC%94-2023%E4%B8%8A%E5%8D%8A%E5%B9%B4/" title="随笔-2023上半年"><img src="/img/note.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="随笔-2023上半年"/></a><div class="content"><a class="title" href="/2023/04/06/%E9%9A%8F%E7%AC%94-2023%E4%B8%8A%E5%8D%8A%E5%B9%B4/" title="随笔-2023上半年">随笔-2023上半年</a><time datetime="2023-05-31T13:43:16.228Z" title="更新于 2023-05-31 21:43:16">2023-05-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/08/%E9%9A%8F%E7%AC%94-2023%E5%B9%B4%E4%B9%8B%E5%89%8D/" title="随笔-2023之前"><img src="/img/note.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="随笔-2023之前"/></a><div class="content"><a class="title" href="/2023/04/08/%E9%9A%8F%E7%AC%94-2023%E5%B9%B4%E4%B9%8B%E5%89%8D/" title="随笔-2023之前">随笔-2023之前</a><time datetime="2023-05-31T13:40:16.110Z" title="更新于 2023-05-31 21:40:16">2023-05-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/06/GAMES101%E7%8E%B0%E4%BB%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%85%A5%E9%97%A8/" title="GAMES101现代计算机图形学入门"><img src="/img/games101.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GAMES101现代计算机图形学入门"/></a><div class="content"><a class="title" href="/2023/04/06/GAMES101%E7%8E%B0%E4%BB%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%85%A5%E9%97%A8/" title="GAMES101现代计算机图形学入门">GAMES101现代计算机图形学入门</a><time datetime="2023-05-31T01:38:37.871Z" title="更新于 2023-05-31 09:38:37">2023-05-31</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/%E6%95%B4%E6%B4%81%E4%BB%A3%E7%A0%81%E4%B9%8B%E9%81%93.jpeg')"><div id="footer-wrap"><div class="copyright">&copy;2023 By 紫地丁</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><script id="canvas_nest" defer="defer" color="0,255,127" opacity="1" zIndex="-1" count="130" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
