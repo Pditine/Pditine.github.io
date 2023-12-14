@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>ScriptableObject学习笔记 | 紫地丁的个人博客</title><meta name="author" content="紫地丁"><meta name="copyright" content="紫地丁"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="在Unity中使用ScriptableObject">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ScriptableObject学习笔记">
+<meta property="og:url" content="https://purpleditine.top/2023/12/14/ScriptableObject%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="紫地丁的个人博客">
+<meta property="og:description" content="在Unity中使用ScriptableObject">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://purpleditine.top/img/SO.jpg">
+<meta property="article:published_time" content="2023-12-14T03:36:07.000Z">
+<meta property="article:modified_time" content="2023-12-14T12:50:46.602Z">
+<meta property="article:author" content="紫地丁">
+<meta property="article:tag" content="unity">
+<meta property="article:tag" content="编程">
+<meta property="article:tag" content="计算机">
+<meta property="article:tag" content="C#">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://purpleditine.top/img/SO.jpg"><link rel="shortcut icon" href="/img/head-small.png"><link rel="canonical" href="https://purpleditine.top/2023/12/14/ScriptableObject%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ScriptableObject学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-12-14 20:50:46'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/head.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/SO.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="紫地丁的个人博客"><span class="site-name">紫地丁的个人博客</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">ScriptableObject学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-12-14T03:36:07.000Z" title="发表于 2023-12-14 11:36:07">2023-12-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-12-14T12:50:46.602Z" title="更新于 2023-12-14 20:50:46">2023-12-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">879</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="ScriptableObject学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="ScriptableObject是什么"><a href="#ScriptableObject是什么" class="headerlink" title="ScriptableObject是什么"></a>ScriptableObject是什么</h2><p>是Unity提供的数据配置存储基类,是一个可以存储数据的容器</p>
+<h3 id="数据复用"><a href="#数据复用" class="headerlink" title="数据复用"></a>数据复用</h3><p>一个子弹对象,每次实例化的时候,N个子弹上都有脚本,脚本内存储子弹的信息,比如速度,攻击力等</p>
+<p>这些大量的细粒度对象对内存来说是一定的浪费</p>
+<p>我们可以用SO进行数据复用</p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>我们可以在unity内部进行数据的配置,避免xml,json等的使用</p>
+<h3 id="编辑模式下的数据持久化"><a href="#编辑模式下的数据持久化" class="headerlink" title="编辑模式下的数据持久化"></a>编辑模式下的数据持久化</h3><p>在unity编辑器内SO有持久化特性</p>
+<h2 id="SO的好处"><a href="#SO的好处" class="headerlink" title="SO的好处"></a>SO的好处</h2><ol>
+<li>在unity内文件配置</li>
+<li>数据复用</li>
+<li>更好的处理数据的多态行为</li>
+</ol>
+<h1 id="数据文件的创建"><a href="#数据文件的创建" class="headerlink" title="数据文件的创建"></a>数据文件的创建</h1><h2 id="自定义SO数据容器"><a href="#自定义SO数据容器" class="headerlink" title="自定义SO数据容器"></a>自定义SO数据容器</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> UnityEngine.Video;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">SO</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyData</span> : <span class="title">ScriptableObject</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> GameObject obj;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">float</span> speed;</span><br><span class="line">        <span class="keyword">public</span> <span class="built_in">int</span> atk;</span><br><span class="line">        <span class="keyword">public</span> VideoClip vc;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们可以在inspector里关联成员变量,注意,这些只是默认数据</p>
+<p><img src="https://tuchuange.oss-cn-beijing.aliyuncs.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-24%20150343.png" alt="屏幕截图 2023-11-24 150343"></p>
+<p>这只是一个类,我们还没有创建数据资源文件 </p>
+<h2 id="创建数据资源文件"><a href="#创建数据资源文件" class="headerlink" title="创建数据资源文件"></a>创建数据资源文件</h2><p>方法有两种</p>
+<h3 id="为类添加CreateAssetMenu特性"><a href="#为类添加CreateAssetMenu特性" class="headerlink" title="为类添加CreateAssetMenu特性"></a>为类添加CreateAssetMenu特性</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> UnityEngine.Video;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> SO</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="built_in">CreateAssetMenu</span>(fileName = <span class="string">&quot;DefaultMyData&quot;</span>,menuName = <span class="string">&quot;MyData&quot;</span>,order = <span class="number">0</span>)]</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyData</span> : ScriptableObject</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> GameObject obj;</span><br><span class="line">        <span class="keyword">public</span> <span class="type">float</span> speed;</span><br><span class="line">        <span class="keyword">public</span> <span class="type">int</span> atk;</span><br><span class="line">        <span class="keyword">public</span> VideoClip vc;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tuchuange.oss-cn-beijing.aliyuncs.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-24%20151010.png" alt="屏幕截图 2023-11-24 151010"></p>
+<h3 id="用静态方法创建数据对象"><a href="#用静态方法创建数据对象" class="headerlink" title="用静态方法创建数据对象"></a>用静态方法创建数据对象</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEditor;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> SO</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ScriptableObjectTool</span></span><br><span class="line">    &#123;</span><br><span class="line">        [<span class="built_in">MenuItem</span>(<span class="string">&quot;ScriptableObject/CreateMyData&quot;</span>)]</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="type">static</span> <span class="type">void</span> <span class="title">CreateMyData</span><span class="params">()</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            MyData asset = ScriptableObject.<span class="built_in">CreateInstance</span>&lt;MyData&gt;();</span><br><span class="line">            </span><br><span class="line">            AssetDatabase.<span class="built_in">CreateAsset</span>(asset,<span class="string">&quot;Assets/Resources/MyDataTest.asset&quot;</span>);</span><br><span class="line">            </span><br><span class="line">            AssetDatabase.<span class="built_in">SaveAssets</span>();</span><br><span class="line">            </span><br><span class="line">            AssetDatabase.<span class="built_in">Refresh</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>点击按钮,即可创建文件</p>
+<p><img src="https://tuchuange.oss-cn-beijing.aliyuncs.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-24%20154754.png" alt="屏幕截图 2023-11-24 154754"></p>
+<h1 id="数据文件的使用"><a href="#数据文件的使用" class="headerlink" title="数据文件的使用"></a>数据文件的使用</h1><h2 id="数据文件的使用-1"><a href="#数据文件的使用-1" class="headerlink" title="数据文件的使用"></a>数据文件的使用</h2><p>直接在MonoBehaviour类中作为成员使用</p>
+<ol>
+<li>通过Inspector关联使用</li>
+<li>通过Resource.Load取用</li>
+</ol>
+<h2 id="SO的生命周期函数"><a href="#SO的生命周期函数" class="headerlink" title="SO的生命周期函数"></a>SO的生命周期函数</h2><p>Awake:文件创建时调用</p>
+<p>OnDestroy:对象被销毁时调用</p>
+<p>OnEnable:创建或加载对象时调用</p>
+<p>OnDisable:销毁对象或即将重新加载脚本程序集时调用</p>
+<p>OnValidata:编辑器才会调用的函数,unity在加载脚本或者Inspector窗口中更改值时调用</p>
+<h1 id="非持久数据"><a href="#非持久数据" class="headerlink" title="非持久数据"></a>非持久数据</h1><p>非持久数据指的是不管在编辑器内还是发布后都不会持久化的数据</p>
+<p>我们可以根据自己的需求随时创建对应数据对象进行使用</p>
+<h2 id="使用SO生成非持久化数据"><a href="#使用SO生成非持久化数据" class="headerlink" title="使用SO生成非持久化数据"></a>使用SO生成非持久化数据</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">SO</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Test</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> MyData data;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            data = ScriptableObject.CreateInstance&lt;MyData&gt;();</span><br><span class="line">            </span><br><span class="line">            Debug.Log(data.atk);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="非持久数据的优点"><a href="#非持久数据的优点" class="headerlink" title="非持久数据的优点"></a>非持久数据的优点</h2><p>节约硬盘空间,仅在内存中使用</p>
+<h1 id="ScriptableObject数据持久化"><a href="#ScriptableObject数据持久化" class="headerlink" title="ScriptableObject数据持久化"></a>ScriptableObject数据持久化</h1><h2 id="Json结合SO存储数据"><a href="#Json结合SO存储数据" class="headerlink" title="Json结合SO存储数据"></a>Json结合SO存储数据</h2><p><img src="https://tuchuange.oss-cn-beijing.aliyuncs.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-29%20132819.png" alt="屏幕截图 2023-11-29 132819"></p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.IO;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">SO</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">SaveManager</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">    &#123;</span><br><span class="line">        [<span class="meta">SerializeField</span>]<span class="keyword">private</span> MyData data;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">var</span> str = JsonUtility.ToJson(data);</span><br><span class="line">            </span><br><span class="line">            File.WriteAllText(Application.persistentDataPath + <span class="string">&quot;/testJson.json&quot;</span>,str);</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;obj&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span><span class="attr">&quot;instanceID&quot;</span><span class="punctuation">:</span><span class="number">22550</span><span class="punctuation">&#125;</span><span class="punctuation">,</span><span class="attr">&quot;speed&quot;</span><span class="punctuation">:</span><span class="number">5.0</span><span class="punctuation">,</span><span class="attr">&quot;atk&quot;</span><span class="punctuation">:</span><span class="number">5</span><span class="punctuation">,</span><span class="attr">&quot;vc&quot;</span><span class="punctuation">:</span><span class="punctuation">&#123;</span><span class="attr">&quot;instanceID&quot;</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">&#125;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Json结合SO读取数据"><a href="#Json结合SO读取数据" class="headerlink" title="Json结合SO读取数据"></a>Json结合SO读取数据</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.IO;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">SO</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title">SaveManager</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">    &#123;</span><br><span class="line">        [<span class="meta">SerializeField</span>]<span class="keyword">private</span> MyData data;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">var</span> str =File.ReadAllText(Application.persistentDataPath + <span class="string">&quot;/testJson.json&quot;</span>);</span><br><span class="line">            JsonUtility.FromJsonOverwrite(str,data);</span><br><span class="line">            Debug.Log(data.atk);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://tuchuange.oss-cn-beijing.aliyuncs.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-11-29%20133601.png" alt="屏幕截图 2023-11-29 133601"></p>
+<h1 id="SO应用"><a href="#SO应用" class="headerlink" title="SO应用"></a>SO应用</h1><ul>
+<li>配置数据</li>
+</ul>
+<p>SO适合做配置文件,因为配置文件一般是只读的,游戏不会修改配置文件</p>
+<p>SO不需要第三方软件,比如Excel,Json编辑器等</p>
+<ul>
+<li>复用数据</li>
+</ul>
+<p>当我们使用大量细粒度的对象时,比如子弹,许多子弹可以共享同一份数据,而不用为每个子弹都分配内存</p>
+<ul>
+<li><p>数据带来的多态行为</p>
+</li>
+<li><p>使用单例获取数据</p>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://purpleditine.top">紫地丁</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://purpleditine.top/2023/12/14/ScriptableObject%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://purpleditine.top/2023/12/14/ScriptableObject%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://purpleditine.top" target="_blank">紫地丁的个人博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/unity/">unity</a><a class="post-meta__tags" href="/tags/%E7%BC%96%E7%A8%8B/">编程</a><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><a class="post-meta__tags" href="/tags/C/">C#</a></div><div class="post_share"><div class="social-share" data-image="/img/SO.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/12/14/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="C++学习笔记"><img class="cover" src="/img/C++.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">C++学习笔记</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/14/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-Json/" title="Unity数据持久化-Json学习笔记"><img class="cover" src="/img/json.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Unity数据持久化-Json学习笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/04/13/Csharp%E9%87%8D%E5%AD%A6-%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="C#重学-官方文档学习笔记"><img class="cover" src="/img/CS.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-13</div><div class="title">C#重学-官方文档学习笔记</div></div></a></div><div><a href="/2023/05/08/MVC%E6%9E%B6%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="MVC架构学习笔记"><img class="cover" src="/img/mvc.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-08</div><div class="title">MVC架构学习笔记</div></div></a></div><div><a href="/2023/12/14/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-Json/" title="Unity数据持久化-Json学习笔记"><img class="cover" src="/img/json.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-14</div><div class="title">Unity数据持久化-Json学习笔记</div></div></a></div><div><a href="/2023/05/27/Unity-3D%E6%95%B0%E5%AD%A6/" title="Unity-3D数学基础"><img class="cover" src="/img/unityMath.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-27</div><div class="title">Unity-3D数学基础</div></div></a></div><div><a href="/2023/12/14/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="C++学习笔记"><img class="cover" src="/img/C++.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-12-14</div><div class="title">C++学习笔记</div></div></a></div><div><a href="/2023/04/25/Lua%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="Lua学习笔记"><img class="cover" src="/img/Lua.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-25</div><div class="title">Lua学习笔记</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/head.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">紫地丁</div><div class="author-info__description">李健豪 中国传媒大学游戏系本科在读 QQ:1146556075 微信:philipica       请注明来历</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">31</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">23</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/89364405?spm_id_from=333.1007.0.0"><i class="iconfont icon-bilibili"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://space.bilibili.com/89364405?spm_id_from=333.999.0.0" target="_blank" title=""><i class="iconfont icon-bilibili"></i></a><a class="social-icon" href="https://github.com/pditine" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:hanfe666@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这里是紫地丁的个人博客，我会不定时的更新许多奇奇怪怪的作品、博文和碎碎念。总之，才疏学浅、漏洞百出、请多指教！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ScriptableObject%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.1.</span> <span class="toc-text">ScriptableObject是什么</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%8D%E7%94%A8"><span class="toc-number">1.1.1.</span> <span class="toc-text">数据复用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.1.2.</span> <span class="toc-text">配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96"><span class="toc-number">1.1.3.</span> <span class="toc-text">编辑模式下的数据持久化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SO%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="toc-number">1.2.</span> <span class="toc-text">SO的好处</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-number">2.</span> <span class="toc-text">数据文件的创建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89SO%E6%95%B0%E6%8D%AE%E5%AE%B9%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">自定义SO数据容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6"><span class="toc-number">2.2.</span> <span class="toc-text">创建数据资源文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E7%B1%BB%E6%B7%BB%E5%8A%A0CreateAssetMenu%E7%89%B9%E6%80%A7"><span class="toc-number">2.2.1.</span> <span class="toc-text">为类添加CreateAssetMenu特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%AF%B9%E8%B1%A1"><span class="toc-number">2.2.2.</span> <span class="toc-text">用静态方法创建数据对象</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">数据文件的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8-1"><span class="toc-number">3.1.</span> <span class="toc-text">数据文件的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SO%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="toc-number">3.2.</span> <span class="toc-text">SO的生命周期函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%9E%E6%8C%81%E4%B9%85%E6%95%B0%E6%8D%AE"><span class="toc-number">4.</span> <span class="toc-text">非持久数据</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8SO%E7%94%9F%E6%88%90%E9%9D%9E%E6%8C%81%E4%B9%85%E5%8C%96%E6%95%B0%E6%8D%AE"><span class="toc-number">4.1.</span> <span class="toc-text">使用SO生成非持久化数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E6%8C%81%E4%B9%85%E6%95%B0%E6%8D%AE%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-number">4.2.</span> <span class="toc-text">非持久数据的优点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ScriptableObject%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96"><span class="toc-number">5.</span> <span class="toc-text">ScriptableObject数据持久化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Json%E7%BB%93%E5%90%88SO%E5%AD%98%E5%82%A8%E6%95%B0%E6%8D%AE"><span class="toc-number">5.1.</span> <span class="toc-text">Json结合SO存储数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Json%E7%BB%93%E5%90%88SO%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"><span class="toc-number">5.2.</span> <span class="toc-text">Json结合SO读取数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SO%E5%BA%94%E7%94%A8"><span class="toc-number">6.</span> <span class="toc-text">SO应用</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/12/14/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-Json/" title="Unity数据持久化-Json学习笔记"><img src="/img/json.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Unity数据持久化-Json学习笔记"/></a><div class="content"><a class="title" href="/2023/12/14/%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96-Json/" title="Unity数据持久化-Json学习笔记">Unity数据持久化-Json学习笔记</a><time datetime="2023-12-14T12:57:02.344Z" title="更新于 2023-12-14 20:57:02">2023-12-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/04/04/Cyberpsychosis%E6%B8%B8%E6%88%8F%E4%BB%8B%E7%BB%8D/" title="Cyberpsychosis游戏介绍"><img src="/img/cyberpsychosis/202303261558559.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Cyberpsychosis游戏介绍"/></a><div class="content"><a class="title" href="/2023/04/04/Cyberpsychosis%E6%B8%B8%E6%88%8F%E4%BB%8B%E7%BB%8D/" title="Cyberpsychosis游戏介绍">Cyberpsychosis游戏介绍</a><time datetime="2023-12-14T12:55:50.410Z" title="更新于 2023-12-14 20:55:50">2023-12-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/14/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="C++学习笔记"><img src="/img/C++.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++学习笔记"/></a><div class="content"><a class="title" href="/2023/12/14/C++%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="C++学习笔记">C++学习笔记</a><time datetime="2023-12-14T12:55:42.353Z" title="更新于 2023-12-14 20:55:42">2023-12-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/12/14/ScriptableObject%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="ScriptableObject学习笔记"><img src="/img/SO.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ScriptableObject学习笔记"/></a><div class="content"><a class="title" href="/2023/12/14/ScriptableObject%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="ScriptableObject学习笔记">ScriptableObject学习笔记</a><time datetime="2023-12-14T12:50:46.602Z" title="更新于 2023-12-14 20:50:46">2023-12-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/20/BuildingYourEnglishBrain/" title="BuildingYourEnglishBrain"><img src="/img/cloudEnglish.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="BuildingYourEnglishBrain"/></a><div class="content"><a class="title" href="/2023/05/20/BuildingYourEnglishBrain/" title="BuildingYourEnglishBrain">BuildingYourEnglishBrain</a><time datetime="2023-12-06T04:50:54.598Z" title="更新于 2023-12-06 12:50:54">2023-12-06</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/SO.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2023 By 紫地丁</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><script id="canvas_nest" defer="defer" color="0,255,127" opacity="1" zIndex="-1" count="130" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
